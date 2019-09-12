@@ -1,0 +1,129 @@
+<%- include partials/navbar.ejs %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  static-top">
+    <div class="container">
+      <!--<a class="navbar-brand" href="#">One Stop Dev Shopping Site</a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+       <img src="" id="devlogo">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+            </a>
+          </li>
+            <!--  <span class="sr-only">(current)</span>-->
+
+          <!--  <li class="nav-item">
+              <a class="nav-link" href="#">Basics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Speciality</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gifts</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Accesories</a>
+            </li>-->
+          <li>
+            <a href="#exampleModal" class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#exampleModal">
+          <span class="glyphicon glyphicon-shopping-cart">Shopping Cart</span></a>
+          <input type="text" id="topCartDisplay"></input>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<%- include partials/headerimage.ejs %>
+
+ <!--Container for adding Grid View, List View and Option Buttons-->
+<div class="container" id="sortcontainer">
+<div class="row">
+<button class="btn btn-default" id="grid-view" onclick="gridView()"><i class="fa fa-table fa-3x"></i></button>
+<button class="btn btn-default" id="list-view" onlcick="listView()"><i class="fa fa-list fa-3x"></i></button>
+
+<select id="sortByChoice" onchange="selectFunction()">
+<option id="lowtohigh">Low To High</option>
+<option id="hightolow">High To Low</option>
+<option id="A-z">A-Z</option>
+
+  </select>
+</div>
+</div>
+
+<div class="container" id="sortcontainer">
+</div>
+<div class="container-fluid" id="product-container">
+    <div class="row">
+      <div class='col-md-2 custom-control custom-checkbox"' id="checkbox-col">
+
+<span>
+  <i class="fa fa-search" aria-hidden="true"><input type="text" class="input" placeholder="Search Items"></i></span><br>
+
+<span>
+  <label><input class="sortByCategory" type="checkbox" value="Lipsticks" onclick="sortCategoryFunction()">LipSticks</input></label><br>
+  <label><input class="sortByCategory" type="checkbox" value="LipGlosses" onclick="sortCategoryFunction()">Lip Glosses</input></label><br>
+  <label><input class="sortByCategory" type="checkbox" value="Brushes" onclick="sortCategoryFunction()">Brushes</input></label><br>
+  <label><input class="sortByCategory" type="checkbox" value="Accesories" onclick="sortCategoryFunction()">Accesories</input></label><br>
+  <label><input class="sortByCategory" type="checkbox" value="MakeupBags" onclick="sortCategoryFunction()">Makeup Bags</input></label><br>
+  <label><input class="sortByCategory" type="checkbox" value="Palettes" onclick="sortCategoryFunction()">Palettes</input></label>
+  </span>
+       </div>
+
+<!-- <form target ="_blank" action="/users/checkout" method="POST"
+<input type="hidden" name="amount" value="" id = "checkoutinout">
+</form>-->
+
+        <div class="row" id="product-row"></div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="modal right fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="nav flex-sm-column flex-row">
+                    <table class="table table-striped "id="productsTable">
+
+  <thead>
+  <h3>Your shopping cart</h3>
+  <tr>
+    <th>Product Name</th>
+    <th>Product Description</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+  </tr>
+
+  </thead>
+
+  <tbody>
+  <tr id="tableRow"></tr>
+  </tbody>
+
+
+  <tfoot><a href="#" class="btn btn-primary">
+        <span class="glyphicon glyphicon-remove">Remove All</span></a>
+  </tfoot>
+
+  </table>
+
+                  </div>
+
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+        </div>
+      </div>
+  </div>
+
+
+<%- include partials/footer.ejs %>

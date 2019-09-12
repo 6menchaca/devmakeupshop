@@ -1,0 +1,17 @@
+<%- include partials/navbar.ejs %>
+<%- include partials/headerimage.ejs %>
+
+<!--- Container for adding Grid View, List View and Option Buttons-->
+<div class="container" id="sortcontainer">
+<div class="row">
+<button class="btn btn-default" id="grid-view" onclick="gridView()"><i class="fa fa-table fa-3x"></i></button>
+<button class="btn btn-default" id="list-view" onlcick="listView()"><i class="fa fa-list fa-3x"></i></button>
+
+<select id="sortByChoice" onchange="selectFunction()">
+<option id="lowtohigh">Low To High</option>
+<option id="hightolow">High To Low</option>
+<option id="A-z">A-Z</option>
+
+  </select>
+</div>
+</div>
